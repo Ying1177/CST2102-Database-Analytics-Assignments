@@ -1,3 +1,6 @@
+Tao Yang, student# 040926874 
+
+
 1)	List the author id and name plus the books they’re written (title_id, title) and the books publisher name. Include authors that haven’t written a book, and books that haven’t been published. Note: You will need to insert values in some tables to confirm your query is correct – include the insertions as part of your solution.
 2)	 List the author id and name of the author that has written the most books in each genre. Note: Insert data that identifies a new genre (i.e., ‘Fantasy’) and 3 authors (‘AF1’, ‘AF2’, ‘AF3’) that write Fantasy books (‘F01’, ‘F02’, ‘F03’).
 3)	List the pub_id, pub_name, number of books it has published by each  genre, the total revenue it has earned for each genre, the total revenue it has earned (i.e., for all genre) for the two most recent years (combined) of data;
