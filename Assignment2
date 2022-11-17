@@ -16,6 +16,10 @@ SQL> INSERT INTO author_TITLES values ('T15','A01',1,1.0);
 
 SQL>
 
+select authors.Au_id, Fname, Lname, titles.title_id, title, publishers.pub_name from authors 
+full outer join author_titles on  authors.au_id = author_titles.au_id 
+full outer join titles on author_titles.title_id = titles.title_id 
+full outer join publishers on publishers.Pub_id = Titles.Pub_id;
 
 
 SQL> select authors.Au_id, Fname, Lname, titles.title_id, title, publishers.pub_name from authors inner join author_titles on  authors.au_id = author_titles.au_id right outer join titles on author_titles.title_id = titles.title_id inner join publishers on publishers.Pub_id = Titles.Pub_id;
