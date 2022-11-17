@@ -1,9 +1,50 @@
-Tao Yang, student# 040926874 
+Tao Yang, student# 040926874 Contribution 50%
 
 
 1)	List the author id and name plus the books they’re written (title_id, title) and the books publisher name. 
 Include authors that haven’t written a book, and books that haven’t been published. 
 Note: You will need to insert values in some tables to confirm your query is correct – include the insertions as part of your solution.
+
+
+SQL> INSERT INTO TITLES values
+  2    ('T15','What Are The Next Applications?','history', 802, 29.99, 10467, 'P03','01-Feb-09',20000, 0.06);
+
+1 row created.
+SQL> INSERT INTO author_TITLES values ('T15','A01',1,1.0);
+
+1 row created.
+
+SQL>
+
+
+
+SQL> select authors.Au_id, Fname, Lname, titles.title_id, title, publishers.pub_name from authors inner join author_titles on  authors.au_id = author_titles.au_id right outer join titles on author_titles.title_id = titles.title_id inner join publishers on publishers.Pub_id = Titles.Pub_id;
+
+AU_ FNAME           LNAME           TIT TITLE                                    PUB_NAME
+--- --------------- --------------- --- ---------------------------------------- --------------------
+A01 Sarah           Buchman         T01 1977!                                    Abatis Publishers
+A01 Sarah           Buchman         T15 What Are The Next Applications?          Schadenfreude Press
+A01 Sarah           Buchman         T02 200 Years of German Humor                Schadenfreude Press
+A01 Sarah           Buchman         T13 What Are The Civilian Applications?      Schadenfreude Press
+A02 Wendy           Heydemark       T06 How About Never?                         Abatis Publishers
+A02 Wendy           Heydemark       T07 I Blame My Mother                        Schadenfreude Press
+A02 Wendy           Heydemark       T12 Spontaneous, Not Annoying                Abatis Publishers
+A03 Hallie          Hull            T11 Perhaps It's a Glandular Problem         Tenterhooks Press
+A03 Hallie          Hull            T04 But I Did It Unconsciously               Tenterhooks Press
+A04 Klee            Hull            T05 Exchange of Platitudes                   Tenterhooks Press
+A04 Klee            Hull            T07 I Blame My Mother                        Schadenfreude Press
+
+AU_ FNAME           LNAME           TIT TITLE                                    PUB_NAME
+--- --------------- --------------- --- ---------------------------------------- --------------------
+A04 Klee            Hull            T04 But I Did It Unconsciously               Tenterhooks Press
+A04 Klee            Hull            T11 Perhaps It's a Glandular Problem         Tenterhooks Press
+A05 Christian       Kells           T03 Ask Your System Administrator            Core Dump Books
+A06                 Kellsey         T11 Perhaps It's a Glandular Problem         Tenterhooks Press
+A06                 Kellsey         T08 Just Wait Until After School             Tenterhooks Press
+A06                 Kellsey         T09 Kiss My Boo-Boo                          Tenterhooks Press
+
+17 rows selected.
+
 
 
 
